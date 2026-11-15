@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "Baloo Bhaijaan 2";
+  src: url("fonts/BalooBhaijaan2-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* Dark is the default theme. Light is switched on by the button in the header. */
+:root {
+  --bg: #10203f;
+  --fg: #f6ecd0;
+  --card: #172a52;
+  --line: #2a3d68;
+  --muted: #a9b3cc;
+  --accent: #f2c14e;
+  --pattern: url("img/pattern.svg");
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f6ecd0;
+  --fg: #10203f;
+  --card: #fcf7e8;
+  --line: #dccfa6;
+  --muted: #55607e;
+  --accent: #946500;
+  --pattern: url("img/pattern-light.svg");
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg) var(--pattern);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  transition: background-color .25s, color .25s;
+}
+
+a { color: var(--fg); }
+h1, h2, h3, .display { font-family: "Baloo Bhaijaan 2", system-ui, sans-serif; font-weight: 800; line-height: 1.2; }
+
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- header ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.top .logo img { height: 34px; width: auto; display: block; }
+.top .logo .on-light { display: none; }
+:root[data-theme="light"] .top .logo .on-dark { display: none; }
+:root[data-theme="light"] .top .logo .on-light { display: block; }
+.top nav { display: flex; align-items: center; }
+.top nav a { margin-inline-start: 20px; color: var(--muted); text-decoration: none; font-size: 15px; }
+.top nav a:hover, .top nav a:focus { color: var(--fg); }
+
+.theme {
+  margin-inline-start: 18px;
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--card); color: var(--fg);
+  border: 1px solid var(--line); border-radius: 12px;
+  cursor: pointer; padding: 0;
+}
+.theme:hover, .theme:focus-visible { border-color: var(--accent); }
+.theme svg { width: 20px; height: 20px; display: block; fill: currentColor; }
+.theme .sun { display: block; }
+.theme .moon { display: none; }
+:root[data-theme="light"] .theme .sun { display: none; }
+:root[data-theme="light"] .theme .moon { display: block; }
+
+/* ---------- hero ---------- */
+.hero { text-align: center; padding: 34px 0 30px; }
+.hero svg { width: min(78vw, 360px); height: auto; display: block; margin: 0 auto; cursor: pointer; color: var(--fg); }
+.hero svg rect, .hero svg path { transform-box: fill-box; transform-origin: center; }
+.hero .tag { margin: 22px 0 0; font-size: 20px; }
+.hero .tag-ar { margin: 4px 0 0; font-size: 19px; color: var(--muted); text-align: center; }
+
+/* ---------- sections ---------- */
+section { margin: 26px 0; }
+.label { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  transition: background-color .25s, border-color .15s, transform .15s;
+}
+.card p { margin: 0 0 12px; }
+.card p:last-child { margin-bottom: 0; }
+
+.game { display: flex; gap: 22px; align-items: center; text-decoration: none; }
+.game:hover, .game:focus { border-color: var(--accent); transform: translateY(-2px); }
+.game .badge {
+  flex: none; width: 96px; height: 96px; border-radius: 20px;
+  background: #0b0e17; border: 1px solid #26304d;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Arial, sans-serif; font-weight: 900; font-size: 54px; color: #f2c14e;
+}
+.game h3 { margin: 0 0 4px; font-size: 28px; color: var(--accent); }
+.game .soon { color: var(--muted); font-size: 15px; }
+.game .go { color: var(--accent); font-weight: 700; }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+[dir="rtl"] { text-align: right; }
+
+.mail { font-family: "Baloo Bhaijaan 2", system-ui, sans-serif; font-weight: 800; font-size: clamp(22px, 6vw, 32px); text-decoration: none; }
+.mail:hover, .mail:focus { color: var(--accent); }
+
+footer { margin-top: 44px; padding: 26px 0 44px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 14px; }
+footer p { margin: 4px 0; }
+
+@media (max-width: 640px) {
+  .two { grid-template-columns: 1fr; }
+  .game { flex-direction: column; text-align: center; }
+  .top .logo img { height: 26px; }
+  .top nav a { margin-inline-start: 14px; }
+  .theme { margin-inline-start: 12px; }
+}
