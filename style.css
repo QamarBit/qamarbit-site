@@ -129,3 +129,5 @@ footer p { margin: 4px 0; }
   .top nav { gap: 6px; }
   .top nav a { padding: 6px 11px; }
 }
+
+footer .ver { font-size: 12px; opacity: .7; }
