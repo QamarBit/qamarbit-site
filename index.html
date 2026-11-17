@@ -20,6 +20,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- pixel icons for the social links, drawn on a 16x16 grid like the theme button (not the platforms' own logos) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-youtube" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 4h1V3h10v1h1v8h-1v1H3v-1H2zM6 5v6h1v-1h1V9h1V7H8V6H7V5z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 16 16"><path d="M3 3h2v1H3zM11 3h2v1h-2zM4 4h2v1H4zM10 4h2v1h-2zM5 5h2v1H5zM9 5h2v1H9zM6 6h2v1H6zM8 6h2v1H8zM7 7h2v1H7zM8 8h2v1H8zM6 8h2v1H6zM9 9h2v1H9zM5 9h2v1H5zM10 10h2v1h-2zM4 10h2v1H4zM11 11h2v1h-2zM3 11h2v1H3zM12 12h2v1h-2zM2 12h2v1H2z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 16 16"><path d="M9 2h2v9H9zM11 3h1v1h1v1h1v2h-1V6h-1V5h-1zM6 10h3v1h1v2H9v1H6v-1H5v-2h1z"/></symbol>
+  </svg>
   <div class="wrap">
 
     <header class="top">
@@ -242,12 +248,27 @@
           <p>Playing ZomDrop and need help? Write to <a href="mailto:support@zomdrop.com">support@zomdrop.com</a>.</p>
         </div>
       </section>
+
+      <section id="follow">
+        <p class="label">Follow us</p>
+        <div class="social">
+          <a href="https://www.youtube.com/@qamarbit" rel="me noopener" target="_blank"><svg aria-hidden="true"><use href="#i-youtube"/></svg><span>YouTube</span></a>
+          <a href="https://x.com/qamarbit" rel="me noopener" target="_blank"><svg aria-hidden="true"><use href="#i-x"/></svg><span>X</span></a>
+          <a href="https://www.tiktok.com/@qamarbit" rel="me noopener" target="_blank"><svg aria-hidden="true"><use href="#i-tiktok"/></svg><span>TikTok</span></a>
+        </div>
+        <p class="handle">@qamarbit</p>
+      </section>
     </main>
 
     <footer>
+      <p class="mini">
+        <a href="https://www.youtube.com/@qamarbit" rel="me noopener" target="_blank" aria-label="Qamar Bit on YouTube"><svg aria-hidden="true"><use href="#i-youtube"/></svg></a>
+        <a href="https://x.com/qamarbit" rel="me noopener" target="_blank" aria-label="Qamar Bit on X"><svg aria-hidden="true"><use href="#i-x"/></svg></a>
+        <a href="https://www.tiktok.com/@qamarbit" rel="me noopener" target="_blank" aria-label="Qamar Bit on TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+      </p>
       <p>&copy; 2026 Qamar Bit. All rights reserved.</p>
       <p>This website uses no cookies and no tracking. <a href="https://zomdrop.com/privacy.html">ZomDrop privacy policy</a></p>
-      <p class="ver">Site version 1.2</p>
+      <p class="ver">Site version 1.3</p>
     </footer>
 
   </div>
